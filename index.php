@@ -44,14 +44,14 @@ include 'actions.php';
                 <h2 class="login">ACCEDI</h2>
                 <h2 class="register">REGISTRATI</h2>
                 <p class="error"><?php echo $errorMsg; ?></p>
-                <form action="/todo/index.php" method="post" class="login">
+                <form action="/index.php" method="post" class="login">
                     <label>Username</label>
                     <input type="text" placeholder="Username" name="username" />
                     <label>Password</label>
                     <input type="password" placeholder="Password" name="password" />
                     <input type="submit" value="LOGIN" />
                 </form>
-                <form action="/todo/index.php" method="post" class="register">
+                <form action="/index.php" method="post" class="register">
                     <label>Username</label>
                     <input type="text" placeholder="Username" name="rusername" />
                     <label>Password</label>
@@ -83,7 +83,7 @@ include 'actions.php';
                     <div class="todo__addContainer">
                         <h2>Aggiungi nuovo elemento</h2>
                         <p>Ritrova calma e chiarezza togliendo le attività dalla tua testa e mettendole dentro la tua lista.</p>
-                        <form action="/todo/index.php" method="post">
+                        <form action="/index.php" method="post">
                             <input type="text" placeholder="Type a todo..." name="todo" />
                             <button type="submit">Submit</button>
                         </form>

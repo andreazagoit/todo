@@ -1,6 +1,8 @@
 <?php
 
-$connection = mysqli_connect("79.45.179.9", "admin", 'password', "S2I1");
+include 'db.php';
+
+$connection = mysqli_connect($sHost, $sUsername, $sPassword, $sDatabase);
 
 $errorMsg = '';
 
@@ -14,7 +16,7 @@ if (isset($_POST["rusername"]) && isset($_POST['rpassword'])) {
             mysqli_query($connection, "INSERT INTO `todologin` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password');");
             mysqli_query($connection, "CREATE TABLE `S2I1`.`todo_$username` ( `id` INT NOT NULL AUTO_INCREMENT , `task` VARCHAR(200) NOT NULL , `completed` BOOLEAN NOT NULL DEFAULT FALSE , `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;");
             setcookie("username", $username, time() + (86400 * 30), "/");
-            header("Refresh:0, url='/todo/'");
+            header("Refresh:0, url='/'");
         } else {
             $errorMsg = 'Account giá esistente';
         }
@@ -30,7 +32,7 @@ if (!isset($_COOKIE["username"])) {
         $login = mysqli_fetch_all($login, MYSQLI_ASSOC);
         if (count($login) > 0) {
             setcookie("username", $username, time() + (86400 * 30), "/");
-            header("Refresh:0, url='/todo/'");
+            header("Refresh:0, url='/'");
         } else {
             $errorMsg = 'Credenziali errate';
         }
@@ -47,7 +49,7 @@ if (isset($_POST['todo'])) {
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "logout") {
         setcookie("username", null, -1, "/");
-        header("Refresh:0, url='/todo/'");
+        header("Refresh:0, url='/'");
     }
     if ($_GET['action'] == "delete") {
         $id = $_GET["id"];
