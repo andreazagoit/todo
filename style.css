@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  all: unset;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.navbar__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__logout p {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.todo__item {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.todo__itemTask {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.todo__add {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(19, 158, 158);
+}
+.todo__add .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .todo__add .container {
+    flex-direction: column;
+  }
+}
+
+.todo__item button {
+  height: 42px;
+  width: 42px;
+  background-color: inherit;
+}
+
+.icon-container {
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 42px;
+  width: 42px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.alert {
+  background-color: rgb(194, 26, 26) !important;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 12px;
+}
+@media screen and (max-width: 425px) {
+  .todo__addContainer {
+    margin-top: 40px;
+  }
+  lottie-player {
+    margin-bottom: 40px;
+  }
+}
+
+.todo__addContainer > h2,
+.todo__addContainer > p {
+  color: beige;
+}
+
+form > input[type="text"],
+form > input[type="password"] {
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 5px;
+  background-color: inherit;
+  border: 1px solid beige;
+  color: beige;
+}
+
+form > input[type="submit"] {
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 5px;
+  background-color: inherit;
+  border: 1px solid beige;
+  color: beige;
+  cursor: pointer;
+}
+form > input[type="text"]::placeholder,
+form > input[type="password"]::placeholder {
+  color: beige;
+}
+
+form > button[type="submit"],
+.body__content .login__card button {
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 5px;
+  border: 1px solid beige;
+  background-color: beige;
+  color: rgb(19, 158, 158);
+  cursor: pointer;
+}
+form > button[type="submit"]:hover {
+  border: 1px solid beige;
+  background-color: rgb(19, 158, 158);
+  color: beige;
+}
+
+.body__content {
+  background-color: rgb(19, 158, 158);
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.body__content > .login__card {
+  background-color: beige;
+  color: rgb(19, 158, 158);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+}
+.body__content .login__card input[type="text"],
+.body__content .login__card input[type="password"] {
+  background-color: beige;
+  color: rgb(19, 158, 158);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+  border-color: rgb(19, 158, 158);
+}
+.body__content .login__card input[type="text"]::placeholder,
+.body__content .login__card input[type="password"]::placeholder {
+  color: rgb(19, 158, 158);
+}
+.body__content .login__card input[type="submit"],
+.body__content .login__card button {
+  color: rgb(19, 158, 158);
+  background-color: rgb(19, 158, 158);
+  color: beige;
+  cursor: pointer;
+}
+.body__content .login__card input[type="submit"]:hover,
+.body__content .login__card button:hover {
+  color: beige;
+  background-color: beige;
+  color: beige;
+  border-color: rgb(19, 158, 158);
+  color: rgb(19, 158, 158);
+}
+.login__cardButton {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+.body__content > .login__card > form {
+  display: flex;
+  flex-direction: column;
+}
+.body__content .login__card .register {
+  display: none;
+}
+
+.body__content h2 {
+  font-size: 32px;
+  text-align: center;
+}
+.login__cardButton > p {
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+}
